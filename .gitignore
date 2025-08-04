@@ -1,5 +1,5 @@
 .env 
 kaggle.txt
 parser.txt
-modal-rag-app
-gemini-cli-tools
+modal-rag-app/
+gemini-cli-tools/
