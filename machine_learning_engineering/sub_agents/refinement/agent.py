@@ -9,7 +9,7 @@ from google.adk.agents import callback_context as callback_context_module
 from google.adk.models import llm_response as llm_response_module
 from google.adk.models import llm_request as llm_request_module
 from google.adk import agents
-from google.adk.llm import LiteLLM
+from google.adk.models.lite_llm import LiteLlm    
 from google.genai import types
 
 from machine_learning_engineering.sub_agents.refinement import prompt
@@ -48,10 +48,10 @@ def build_multimodal_prompt(base_instruction: str, context: callback_context_mod
     return prompt_parts
 
 # --- Model Setup for Horizon-Beta ---
-# Set up the advanced model using LiteLLM with OpenRouter
+# Set up the advanced model using LiteLlm with OpenRouter
 # This model will be used for the most critical reasoning tasks.
 try:
-    horizon_model = LiteLLM(
+    horizon_model = LiteLlm(
         model="openrouter/horizon-beta",
         api_key=os.environ.get("OPENROUTER_API_KEY")
     )
