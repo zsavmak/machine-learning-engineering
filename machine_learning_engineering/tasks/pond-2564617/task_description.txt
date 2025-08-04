@@ -1,0 +1,50 @@
+Quantifying Contributions of Open Source Projects to the Ethereum Universe
+
+Updates (July 21, 2025)
+1. The competition deadline is extended to Sep 7.
+2. The test dataset was updated on July 9. Please submit using the new test file.
+3. A complete writeup about your approach is mandatory to be considered for the final prize. Submit it here.
+
+Pride yourself on your machine learning capabilities and evaluation chops?
+Here’s your chance to flex those muscles, anon.
+Create a machine learning or metrics-based model that produces 15,000 weights indicating the contribution of open-source repositories to the Ethereum universe.
+The models that best align with juror rankings for a subset of these dependencies will get to allocate $170,000 to approximately 5,000 open-source repositories—and win prizes worth $50,000 from Vitalik Buterin!
+
+Timeline
+This contest is open for about four months, from February 10th to July 25th.
+
+Objective
+Given approximately 5,000 projects (represented by their GitHub repositories) and the dependencies among them, your task is to measure the relative contribution of each dependency (source node) to its dependent (target node).
+You’re free to approach this challenge however you see fit—from feature engineering to model selection and optimization—and you are encouraged to incorporate external datasets as well.
+
+[IMAGE: See the file '67aa1725a9eab3e972adbfb1_eiigj.svg' in the folder Pond]
+The task is to give edge weights such that A + B + C + D = 1 (Level 1), B vs {B1, B2, B3,B4, B5, B6} (Level 2), B1 + B2 + B3 + B4 + B5 + B6 = 1 (Level 3).
+
+Jurors will conduct random spot checks to answer questions such as:
+“Which repo, A or B, has been more valuable to Ethereum’s success?”
+“Between B1 and B2, which has contributed more to B?”
+“How much of B’s value comes from B itself vs. from its dependencies?”
+
+Submissions receive higher scores if they align more closely with these spot checks. A detailed evaluation method is provided below.
+
+Three Levels of Weights
+Your model should assign weights at three levels:
+Level 1: Assign weights to the source repositories (seed nodes) for their relative contributions to the target project, Ethereum.
+Level 2: Assign a weight to each seed repository relative to its set of dependencies.
+Level 3: Assign weights to each dependency of the seed repositories for their relative contributions. This results in approximately 15,000 unique weights between the 30+ seed nodes and ~5,000 child nodes.
+
+In summary, your job is to assign contribution weights to source repositories such that their total contribution to the target repository equals 1.
+
+Evaluation
+There are two evaluation measures. The first is primarily indicative, while the second is used to award prizes.
+
+Raw Cost Function
+The weights (i.e., project contributions) from your model will be scored based on a cost function that measures how far the weights deviate from juror samples.
+
+Contribution to the Composite Model
+This measure reflects how much your model influences the ensemble of models that determine the final allocation to projects.
+
+Submission File
+The submission format is a CSV file with three columns: repo, parent, and weight.
+
+[IMAGE: See the file 'unnamed.png' in the folder Pond]
