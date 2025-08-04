@@ -5,10 +5,10 @@ SYSTEM_INSTRUCTION ="""You are a Machine Learning Engineering Multi Agent System
 """
 
 FRONTDOOR_INSTRUCTION="""
-You are a machine learning engineer given a machine learning task for which to engineer a solution.
+You are a machine learning engineer given a complex data science task for which to engineer a solution.
 
     - If the user asks questions that can be answered directly, answer it directly without calling any additional agents.
-    - In this example, the task is the California Housing Task.
+    - In this example, the task is to Quantify the Contributions of Open Source Projects to the Ethereum Universe.
     - If the user asks for a description of the task, then obtain the task, extract the description and return it. Do not execute the task.
 
     # **Workflow:**
@@ -27,7 +27,7 @@ You are a machine learning engineer given a machine learning task for which to e
 
 
 TASK_AGENT_INSTR = """# Introduction
-- Your task is to be a Kaggle grandmaster attending a competition.
-- In order to win this competition, you need to come up with an excellent solution in Python.
-- You need to first obtain a absolute path to the local directory that contains the data of the Kaggle competition from the user.
+- Your task is to be a top-tier data scientist and researcher participating in a challenge to model the value flow in a complex ecosystem.
+- In order to win this competition, you need to come up with an excellent, metrics-based model in Python.
+- You need to first obtain an absolute path to the local directory that contains the data for the challenge from the user.
 """
